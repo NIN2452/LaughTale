@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>patient's profile</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <style>
+      div > label {
+        font-size: 1.5em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+      }
+      span {
+        color: black;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div  class="header" style="color: white"><h1><a href="https://nin2452.github.io/TN03_Extc_A19/wbste/Home%20Page/index.html">Hi User</a></h1></div>
+    <div id="blackline"></div>
+          <div id="menu_bar">
+            <div class="elements"><a href="{{url_for('patient_profile')}}">My profile</a></div>
+            <div class="elements"><a href="{{url_for('patient_session')}}">My session </div>
+              <div class="elements"><a href="{{url_for('patient_apts')}}">My appointments</div>
+            <div class="elements"><a href="{{url_for('patient_reports')}}">View My Reports</a></div>
+            <div class="elements"><a href="{{url_for('patient_diet')}}">My Diet/Exercise Plan</a></div>
+            <div class="elements"><a href="{{url_for('patient_prescription')}}">View My Prescriptions</a></div>
+      </div>
+    
+  <div>
+    <h1>{{userinfo[0][1]}}'s profile</h1>
+  </body>
+  <div><label>user id :</label><span>{{userinfo[0][0]}}</span></div>
+  <div>
+    <label>Name :</label><span>{{userinfo[0][1]}} {{userinfo[0][2]}}</span>
+  </div>
+  <div><label>Email :</label><span>{{userinfo[0][3]}}</span></div>
+  <div><label>Address :</label><span>{{userinfo[0][4]}}</span></div>
+  <div><label>city :</label><span>{{userinfo[0][5]}}</span></div>
+  <div>
+    <label>state,country :</label
+    ><span>{{userinfo[0][6]}},{{userinfo[0][7]}}</span>
+  </div>
+  <div><label>contact :</label><span>{{userinfo[0][8]}}</span></div>
+  <div><label>Gender</label><span>{{userinfo[0][9]}}</span></div>
+  <div><label>Date of Birth</label><span>{{userinfo[0][10]}}</span></div>
+  <div>
+    <input type="button" value="logout" />
+  </div>
+  </div>
+</body>
+</html>

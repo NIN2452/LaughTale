@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <script type="text/javascript" src="index.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='css/styles.css')}}"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+      <h1><a href="Home_Page/index.html">Logo</a></h1>
+    </div>
+    <nav class="options-bar">
+      <input
+        class="right"
+        type="button"
+        onclick="goto()"
+        id="Sign_Up"
+        name="Sign Up"
+        value="Sign Up"
+      />
+    </nav>
+
+    <div id="form">
+      <p id="lp">Login Page</p>
+      <form action="/login" method="POST">
+        <table align="center" cellpadding="10px">
+          <tbody>
+            <tr>
+              <td>Select the type of user:</td>
+              <td>
+                <select name="table">
+                  <option value="patient">Patient</option>
+                  <option value="doctor">Doctor</option>
+                  <option value="pathologist">Pathologist</option>
+                  <option value="receptionist">Receptionist</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td id="userid">Userid</td>
+              <td><input name="userid" id="username" type="text" /></td>
+            </tr>
+            <tr>
+              <td id="pass">Password</td>
+              <td><input name="pass" id="password" type="password" /></td>
+            </tr>
+            <tr>
+              <td align="right">
+                <input type="submit" value="Login" />
+              </td>
+              <td align="center">
+                <input type="button" value="Forgot Password" />
+              </td>
+            </tr>
+            <tr>
+              <td align="center" colspan="2">
+                <a href="registration.html">New User? Sign Up </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

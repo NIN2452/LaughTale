@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>About Us</title>
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/styles.css')}}">
+</head>
+<body>
+<div class="header">
+<h1>HealthyLife.com</h1>
+  <p>An Indian Electronic Health Records Management Application</p>
+</div>
+<div class="options-bar">
+  <a
+        href="{{url_for('index')}}"
+        
+        >Home</a
+      >
+      <a href="{{url_for('about_us')}}">About Us</a>
+      <a href="{{url_for('product')}}" style="background-color: #ddd; color: black">Products & Services</a>
+      <a href="{{url_for('contact')}}">Contact</a>
+      <a href="{{url_for('help')}}">Help</a>
+      <a href="../registration.html" class="right">Signup</a>
+      <a href="../login.html" class="right">Login</a>
+ </div>
+<div class="content">
+	<p>
+		List of Products:
+    <ul>
+      <li>Patient Pack</li>
+      <li>Doctor Pack</li>
+      <li>Receptionist Pack</li>
+      <li>Pathologist Pack</li>
+    </ul>
+	</p>
+</div>
+</body>
+</html>

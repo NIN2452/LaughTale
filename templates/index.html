@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HealthyLife</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>HealthyLife.com</h1>
+      <p>An Indian Electronic Health Records Management Application</p>
+    </div>
+    <nav class="options-bar">
+      <a href="{{url_for('index')}}" class="activet">Home</a>
+      <a href="{{url_for('about_us')}}">About Us</a>
+      <a href="{{url_for('product')}}">Products & Services</a>
+      <a href="{{url_for('contact')}}">Contact</a>
+      <a href="{{url_for('help')}}">Help</a>
+      <a href="{{url_for('registration')}}" class="right">Signup</a>
+      <a href="{{url_for('login')}}" class="right">Login</a>
+    </nav>
+    <div id="content" class="content">
+      <h2>HealthyLife Pvt Ltd.</h2>
+      <h3>(Mumbai, India)</h3>
+      <p>
+        <b
+          >A single platform for all the medical records and interactions
+          between Hospitals, Healthcare individuals, Pathology labs and
+          Patients.
+        </b>
+      </p>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Public_health_icon_-_Noun_Project_6435.svg/800px-Public_health_icon_-_Noun_Project_6435.svg.png"
+        height="25%"
+        width="25%"
+      />
+    </div>
+  </body>
+</html>

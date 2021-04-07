@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>patient's profile</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <style>
+      div > label {
+        font-size: 1.5em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+      }
+      span {
+        color: black;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div  class="header" style="color: white; "><h1><a href="https://nin2452.github.io/TN03_Extc_A19/wbste/Home%20Page/index.html">Hi User</a></h1></div>
+    <div id="blackline"></div>
+          <div id="menu_bar">
+            <div class="elements"><a href="{{url_for('patient_profile')}}">My profile</a></div>
+            <div class="elements"><a href="{{url_for('patient_session')}}">My session </div>
+              <div class="elements"><a href="{{url_for('patient_apts')}}">My appointments</div>
+            <div class="elements"><a href="{{url_for('patient_reports')}}">View My Reports</a></div>
+            <div class="elements"><a href="{{url_for('patient_diet')}}">My Diet/Exercise Plan</a></div>
+            <div class="elements"><a href="{{url_for('patient_prescription')}}">View My Prescriptions</a></div>
+      </div>
+      <div align="center">
+          <div>{{userinfo[0][1]}}'s sessions'</div>
+        <table border="1px" class="styled-table">
+            <thead>
+            <th>Date</th><th>Problem</th><th>Status</th><th>Action</th><th>View</th></thead>
+            <tbody>
+                <tr><td>12/03/21</td><td>Problem1</td><td>Active</td><td>open/close</td><td>View</td></tr>
+                <tr><td>12/03/21</td><td>Problem2</td><td>Active</td><td>open/close</td><td>View</td></tr>
+                <tr><td>11/03/21</td><td>Problem3</td><td>Active</td><td>open/close</td><td>View</td></tr>
+                <tr><td>11/03/21</td><td>Problem4</td><td>Active</td><td>open/close</td><td>View</td></tr>
+            </tbody>
+        </table>
+    </div</div></body></html>
+    

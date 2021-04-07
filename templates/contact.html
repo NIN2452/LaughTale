@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='css/styles.css')}}"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>HealthyLife.com</h1>
+      <p>An Indian Electronic Health Records Management Application</p>
+    </div>
+    <div class="options-bar">
+      <a href="{{url_for('index')}}">Home</a>
+      <a href="{{url_for('about_us')}}">About Us</a>
+      <a href="{{url_for('product')}}">Products & Services</a>
+      <a
+        href="{{url_for('contact')}}"
+        style="background-color: #ddd; color: black"
+        >Contact</a
+      >
+      <a href="{{url_for('help')}}">Help</a>
+      <a href="../registration.html" class="right">Signup</a>
+      <a href="../login.html" class="right">Login</a>
+    </div>
+    <div id="content">
+      <p>Ninad Yadav: +91-7844771154 Varun Phatak: +91-5541230277</p>
+    </div>
+  </body>
+</html>

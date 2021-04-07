@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Help</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='css/styles.css')}}"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>HealthyLife.com</h1>
+      <p>An Indian Electronic Health Records Management Application</p>
+    </div>
+    <nav class="options-bar">
+      <a href="{{url_for('index')}}">Home</a>
+      <a href="{{url_for('about_us')}}">About Us</a>
+      <a href="{{url_for('product')}}">Products & Services</a>
+      <a href="{{url_for('contact')}}">Contact</a>
+      <a href="{{url_for('help')}}" style="background-color: #ddd; color: black"
+        >Help</a
+      >
+      <a href="../registration.html" class="right">Signup</a>
+      <a href="../login.html" class="right">Login</a>
+    </nav>
+    <div class="content">
+      <p>
+        We are a Team of Young and enthusiastic Engineers. Our Goal is to
+        Provide easy and convinient access to Health records so that it will
+        help to save many lives due to the immediate availability of past
+        records of patients and also save lots of paper work.
+      </p>
+    </div>
+  </body>
+</html>

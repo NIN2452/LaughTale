@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doctor</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+</head>
+<body>
+	<div  class="header"><h1><a href="../Home_Page/index.html">Hi User</a></h1></div>
+  <div id="blackline"></div>
+		<div id="menu_bar">
+			<div class="elements"   ><a href="{{url_for('doctor_addPatient')}}">New Patient</a></div>
+			<div class="elements"  style="background-color: white"><a href="{{url_for('doctor_patList')}}">Patient list</div>
+			<div class="elements"><a href="{{url_for('doctor_apts')}}">Appointments</a></div>
+			<div class="elements"><a href="{{url_for('doctor_session')}}">Sessions</a></div>
+			<div class="elements"><a href="{{url_for('doctor_profile')}}">Profile</a></div>
+		</div>
+		<div align="center">
+        <table border="1px" class="styled-table">
+    <thead>
+        <tr>
+            <th>Sr No.</th><th>Patient Name</th><th>Contact</th><th>Address</th><th>Email-ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        {% for user in userinfo %}
+        <tr>
+            
+          <td>{{loop.index}}</td><td>{{user[0]}} {{user[1]}}</td><td>{{user[2]}}</td><td>{{user[4]}}</td>><td>{{user[3]}}</td>
+       
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+    </div>
+
+</body>
+</html>

@@ -235,27 +235,51 @@ def doctor_addPatient():
     return "please login first"
 
 
-# doctor sessions
+# doctor patient list
+@app.route("/doctor_patList")
+def doctor_patList():
+    if g.user:
+        curser = db.connection.cursor()
+        query = f"select distinct p.p_fname,p.p_lname,p.p_phone,p.p_email,p.p_add from patient p, session s,doctor d where p.p_id=s.p_id and s.dr_id=d.dr_id and d.dr_id={g.user}"
+        result = curser.execute(query)
+        output = curser.fetchall()
+        return render_template("doctor_patList.html", userinfo=output)
+    return "please login first"
+
+
+# Doctor appointments
+@app.route("/doctor_apts")
+def doctor_apts():
+    if g.user:
+        curser = db.connection.cursor()
+        query = f"select distinct p.p_fname,p.p_lname,p.p_phone,p.p_email,s.problem, a.appoint_date,a.appoint_time,s.status from patient p, session s,doctor d, appointment a where p.p_id=s.p_id and s.dr_id=d.dr_id and d.dr_id=a.dr_id and d.dr_id={g.user} order by 6,7"
+        result = curser.execute(query)
+        userdetail = curser.fetchall()
+        return render_template("doctor_apts.html", appointments=userdetail)
+    return "please login first"
+
+
+# Doctor session
 @app.route("/doctor_session")
 def doctor_session():
     if g.user:
         curser = db.connection.cursor()
-        query = f"select distinct p.p_fname,p.p_lname,p.p_phone,s.ses_num from patient p, session s,doctor d where p.p_id=s.p_id and s.dr_id=d.dr_id and d.dr_id={g.user}"
+        query = f"select distinct p.p_fname,p.p_lname,p.p_phone,p.p_email,s.problem,s.status from patient p, session s,doctor d, appointment a where p.p_id=s.p_id and s.dr_id=d.dr_id and d.dr_id=a.dr_id and d.dr_id={g.user}"
         result = curser.execute(query)
-        output = curser.fetchall()
-        return render_template("doctor_session.html", sess=output)
+        userdetail = curser.fetchall()
+        return render_template("doctor_session.html", sess=userdetail)
     return "please login first"
 
 
-# Doctor's patlust
-@app.route("/doctor_patlust")
-def doctor_patlust():
+# Doctor Profile
+@app.route("/doctor_profile")
+def doctor_profile():
     if g.user:
         curser = db.connection.cursor()
         query = f"select * from doctor where dr_id={g.user}"
         result = curser.execute(query)
         userdetail = curser.fetchall()
-        return render_template("doctor_patlust.html", userinfo=userdetail)
+        return render_template("doctor_profile.html", userinfo=userdetail)
     return "please login first"
 
 

@@ -10,8 +10,8 @@
 		<div id="menu_bar">
             <div class="elements"   ><a href="{{url_for('doctor_addPatient')}}">New Patient</a></div>
 			<div class="elements"><a href="{{url_for('doctor_patList')}}">Patient list</div>
-			<div class="elements"><a href="{{url_for('doctor_apts')}}">Appointments</a></div>
-			<div class="elements" style="background-color: white"><a href="{{url_for('doctor_session')}}">Sessions</a></div>
+			<div class="elements" style="background-color: white"><a href="{{url_for('doctor_apts')}}">Appointments</a></div>
+			<div class="elements"><a href="{{url_for('doctor_session')}}">Sessions</a></div>
 			<div class="elements"><a href="{{url_for('doctor_profile')}}">Profile</a></div>
 		</div>
 		<div align="center">
@@ -19,13 +19,13 @@
         <table border="1px" class="styled-table">
     <thead>
         <tr>
-            <th>Sr No.</th><th>Name</th><th>Contact</th><th>Email-ID</th><th>Issue</th><th>Session</th>
+            <th>Sr No.</th><th>Name</th><th>Contact</th><th>Email-ID</th><th>Issue</th><th>Next Appointment</th><th>Session</th>
         </tr>
     </thead>
     <tbody>
-        {% for user in sess %}
-        <tr  class="{{user[5]}}-row">
-            <td>{{loop.index}}</td><td>{{user[0]}} {{user[1]}}</td><td>{{user[2]}}</td><td>{{user[3]}}</td><td>{{user[4]}}</td><td>{{user[5]}}</td>
+        {% for user in appointments %}
+        <tr>
+            <td>{{loop.index}}</td><td>{{user[0]}} {{user[1]}}</td><td>{{user[2]}}</td><td>{{user[3]}}</td><td>{{user[4]}}</td><td>{{user[5]}} {{user[6]}}</td><td>{{user[7]}}</td>
         </tr> 
         {% endfor %}         
     </tbody>
